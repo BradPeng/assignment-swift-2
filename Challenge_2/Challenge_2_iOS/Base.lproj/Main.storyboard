@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HWb-Bc-ImN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Page View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomePageViewController" customModule="Challenge_2_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GTI-pH-OWp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleCellTableViewCell" id="Jje-ot-EyY" customClass="TitleCellTableViewCell" customModule="Challenge_2_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="84.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jje-ot-EyY" id="WkJ-ED-A3S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Pictures - Click to Enlarge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hak-Qi-jUA">
+                                                    <rect key="frame" x="0.0" y="25" width="414" height="34.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hak-Qi-jUA" firstAttribute="leading" secondItem="WkJ-ED-A3S" secondAttribute="leading" id="JOV-aP-7gH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hak-Qi-jUA" secondAttribute="trailing" id="Upy-CY-fus"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hak-Qi-jUA" secondAttribute="bottom" constant="25" id="VTB-ZD-5ia"/>
+                                                <constraint firstItem="Hak-Qi-jUA" firstAttribute="top" secondItem="WkJ-ED-A3S" secondAttribute="top" constant="25" id="Vni-eY-ZqF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageTableViewCell" id="N4h-DF-oPS" customClass="HomePageTableViewCell" customModule="Challenge_2_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="112.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4h-DF-oPS" id="jkW-MY-LnL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8n-JI-a5N">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="j8n-JI-a5N" secondAttribute="trailing" id="62y-ZF-Ecv"/>
+                                                <constraint firstItem="j8n-JI-a5N" firstAttribute="leading" secondItem="jkW-MY-LnL" secondAttribute="leading" id="oa5-rr-hhK"/>
+                                                <constraint firstAttribute="bottom" secondItem="j8n-JI-a5N" secondAttribute="bottom" id="v0K-dV-uFW"/>
+                                                <constraint firstItem="j8n-JI-a5N" firstAttribute="top" secondItem="jkW-MY-LnL" secondAttribute="top" id="xEU-Ew-xxu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImage" destination="j8n-JI-a5N" id="crF-cR-Gmi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="iz8-5G-xcG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="riM-dd-aU2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GTI-pH-OWp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cfq-RY-3SO"/>
+                            <constraint firstItem="GTI-pH-OWp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pmk-4I-Y1s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GTI-pH-OWp" secondAttribute="trailing" id="ajE-Vh-Gas"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GTI-pH-OWp" secondAttribute="bottom" id="wIH-jQ-1a8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SQ5-JZ-6WN"/>
+                    <connections>
+                        <outlet property="tableView" destination="GTI-pH-OWp" id="DIR-RE-aFZ"/>
+                        <segue destination="Adh-6V-xGZ" kind="show" identifier="homeToLargeImage" id="mAM-Hk-omp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+        </scene>
+        <!--Enlarged Image View Controller-->
+        <scene sceneID="F4U-AJ-Kyh">
+            <objects>
+                <viewController id="Adh-6V-xGZ" customClass="EnlargedImageViewController" customModule="Challenge_2_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfM-cq-gWd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dAG-oE-LeC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dAG-oE-LeC" firstAttribute="top" secondItem="5As-hH-tPS" secondAttribute="top" id="MoJ-f5-PLU"/>
+                            <constraint firstItem="5As-hH-tPS" firstAttribute="trailing" secondItem="dAG-oE-LeC" secondAttribute="trailing" id="d1I-ik-NkR"/>
+                            <constraint firstItem="dAG-oE-LeC" firstAttribute="leading" secondItem="5As-hH-tPS" secondAttribute="leading" id="qWs-r7-E9l"/>
+                            <constraint firstItem="5As-hH-tPS" firstAttribute="bottom" secondItem="dAG-oE-LeC" secondAttribute="bottom" id="sIC-lx-hyr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5As-hH-tPS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tIx-DC-Qz3"/>
+                    <connections>
+                        <outlet property="imageView" destination="dAG-oE-LeC" id="pvk-Rq-5sG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTl-LT-6DR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915.9420289855075" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vxb-EF-yyx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HWb-Bc-ImN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wLo-1J-zl8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="w4l-6c-OM0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHX-eZ-PJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+    </scenes>
+</document>
