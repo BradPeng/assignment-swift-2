@@ -30,20 +30,22 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageArray.count
+        return imageArray.count + 1 //all images + first label cell
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //first cell, label
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCellTableViewCell") {
                 return cell
             } else {
                 return UITableViewCell()
             }
-        } else {
+        } else { //main image cells
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell") as? HomePageTableViewCell {
-                cell.cellImage.image = imageArray[indexPath.row].image //fill cells with images from imageArray
-                cell.setCustomImage(image: imageArray[indexPath.row].image) //call cell method that sets constraint for the imageview. This also adjusts the cell's size.
+                cell.cellImage.image = imageArray[indexPath.row - 1].image //fill cells with images from imageArray
+                cell.setCustomImage(image: imageArray[indexPath.row - 1].image) //call cell method that sets constraint for the imageview. This also adjusts the cell's size.
                 return cell
             } else {
                 return UITableViewCell()
@@ -52,11 +54,12 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //set variables to proper values before being passed on to next screen (EnlargedImageViewController)
-        selectedImage = imageArray[indexPath.row].image
-        imageTitle = imageArray[indexPath.row].title
-        
-        performSegue(withIdentifier: "homeToLargeImage", sender: self)
+        //set variables to proper values before being passed on to next screen (EnlargedImageViewController) only if an image cell is tapped
+        if indexPath.row > 0 {
+            selectedImage = imageArray[indexPath.row - 1].image
+            imageTitle = imageArray[indexPath.row - 1].title
+            performSegue(withIdentifier: "homeToLargeImage", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

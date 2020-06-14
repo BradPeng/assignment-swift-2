@@ -29,6 +29,7 @@ class HomePageTableViewCell: UITableViewCell {
         aspectConstraint = nil
     }
     
+    //set imageview constraits to match aspect ratio of source image
     func setCustomImage(image : UIImage) {
         
         let aspect = image.size.width / image.size.height
