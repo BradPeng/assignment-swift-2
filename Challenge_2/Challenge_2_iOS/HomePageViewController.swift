@@ -35,15 +35,19 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCellTableViewCell") as! TitleCellTableViewCell
-            return cell
-
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCellTableViewCell") {
+                return cell
+            } else {
+                return UITableViewCell()
+            }
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell") as! HomePageTableViewCell
-            
-            cell.cellImage.image = imageArray[indexPath.row].image //fill cells with images from imageArray
-            cell.setCustomImage(image: imageArray[indexPath.row].image) //call cell method that sets constraint for the imageview. This also adjusts the cell's size.
-            return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell") as? HomePageTableViewCell {
+                cell.cellImage.image = imageArray[indexPath.row].image //fill cells with images from imageArray
+                cell.setCustomImage(image: imageArray[indexPath.row].image) //call cell method that sets constraint for the imageview. This also adjusts the cell's size.
+                return cell
+            } else {
+                return UITableViewCell()
+            }
         }
     }
     
