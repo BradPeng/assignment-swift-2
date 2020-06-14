@@ -1,8 +1,9 @@
 import UIKit
 
-//Challenge 1, Question 2: Is Palindrome?
-//Code written by Brad Peng for the purpose of the Game of Apps summer intern application.
+//Challenge 1, Question 2: Is Palindrome? Create a function that checks if a string is a palindrome and returns true or false.
+//Code written by Brad Peng, June 2020, for the purpose of the Game of Apps summer intern application.
 
+//Function signature provided: DO NOT CHANGE
 func isPalindrome(_ word: String) -> Bool {
     
     if Array(word).count == 0 {
