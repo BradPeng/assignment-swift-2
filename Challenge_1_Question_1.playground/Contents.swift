@@ -1,7 +1,7 @@
 import UIKit
 
 //Challenge 1, Question 1: Find all pairs for a given sum
-//Code written by Brad Peng for the purpose of the Game of Apps summer intern application.
+//Code written by Brad Peng, June 2020, for the purpose of the Game of Apps summer intern application.
 
 //constants provided for testing
 let testArray = [2, 4, 5, 1, 3, 5, 4]
@@ -18,7 +18,7 @@ func checkTuple(tupleToCheck: (Int, Int), tupleArray:[(Int, Int)]) -> Bool {
 }
 
 //function signature provided: DO NOT CHANGE
-func findPairs(in array: [Int], withSum sum: Int) -> [(Int, Int)]{
+func findPairs(in array: [Int], withSum sum: Int) {
     
     var dictionary: [Int: Int] = [:] //Used to store [complementary numbers in array: index] in first for loop
     var list: [(Int, Int)] = [] //stores the tuples of expected pairs
@@ -45,13 +45,13 @@ func findPairs(in array: [Int], withSum sum: Int) -> [(Int, Int)]{
         //if the dictionary key unwraps to nil, continue for loop
     }
     
-    return list
+    print(list)
 }
 
 
-print(findPairs(in: testArray, withSum: targetSum)) // [(2, 4), (5, 1)]
-print(findPairs(in: [1, 2, 3, 4, 5, 6, 0], withSum: 6)) // [(1, 5), (2, 4), (6, 0)]
-print(findPairs(in: [12, 1, 3, 5, 2, 5, 3, 3], withSum: 0)) // []
-print(findPairs(in: [12, 1, 3, 5, 2, 5, 3, 3], withSum: -2)) // []
-print(findPairs(in: [-1, -3, -4, 0, 2, -6], withSum: -4)) // [(-1, -3), (-4, 0), (2, -6)]
+findPairs(in: testArray, withSum: targetSum) // [(2, 4), (5, 1)]
+findPairs(in: [1, 2, 3, 4, 5, 6, 0], withSum: 6) // [(1, 5), (2, 4), (6, 0)]
+findPairs(in: [12, 1, 3, 5, 2, 5, 3, 3], withSum: 0) // []
+findPairs(in: [12, 1, 3, 5, 2, 5, 3, 3], withSum: -2) // []
+findPairs(in: [-1, -3, -4, 0, 2, -6], withSum: -4) // [(-1, -3), (-4, 0), (2, -6)]
 
