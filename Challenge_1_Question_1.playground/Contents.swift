@@ -25,6 +25,7 @@ func findPairs(in array: [Int], withSum sum: Int) -> [(Int, Int)]{
     var current_value: Int //the current value in array being used
     
     //loop cycles through array and stores [complementary numbers: index] into dictionary
+    //dictionaries can only have unique keys. If we see the same number twice in array, we set the dictionary to value to the index of the newest occurance of said number. This approach produces the results we are looking for.
     for index in 0...array.count - 1 {
         current_value = array[index]
         dictionary[sum - current_value] = index //complementary number is the number we need to add to form the sum value. Eg: complement of 2 for target 6 is 4
@@ -53,3 +54,4 @@ print(findPairs(in: [1, 2, 3, 4, 5, 6, 0], withSum: 6)) // [(1, 5), (2, 4), (6, 
 print(findPairs(in: [12, 1, 3, 5, 2, 5, 3, 3], withSum: 0)) // []
 print(findPairs(in: [12, 1, 3, 5, 2, 5, 3, 3], withSum: -2)) // []
 print(findPairs(in: [-1, -3, -4, 0, 2, -6], withSum: -4)) // [(-1, -3), (-4, 0), (2, -6)]
+
