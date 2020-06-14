@@ -5,15 +5,22 @@ import UIKit
 
 func isPalindrome(_ word: String) -> Bool {
     
-    //lowercase the entire word and remove spaces
-    let formattedWord = word.lowercased().replacingOccurrences(of: " ", with: "")
-    
-    //compare the reversed word and the original word. String() needed to convert result to type String
-    if String(formattedWord.reversed()) == formattedWord {
-        return true
+    if Array(word).count == 0 {
+        return false
     }
     
-    return false
+    //lowercase the entire word and remove spaces. Convert to array to compare letters.
+    let formattedWord = Array(word.lowercased().replacingOccurrences(of: " ", with: ""))
+    
+    //slightly faster than using .reverse() because we don't need to reverse an entire string before comparing letters. We can return false as soon as a mismatch is detected. In the case where it is a palindrome, the two methods should take the same amount of time.
+    for letterIndex in 0...formattedWord.count/2 - 1 { //range automatically floors fractional values
+        if formattedWord[letterIndex] != formattedWord[formattedWord.count - letterIndex - 1] {
+            return false
+        }
+    }
+    
+    return true
+    
 }
 
 //Should print true:
